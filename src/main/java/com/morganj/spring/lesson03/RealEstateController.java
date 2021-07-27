@@ -71,10 +71,11 @@ public class RealEstateController {
 	@RequestMapping("/test03")
 	public String test03(
 			@RequestParam("id") int id,
-			@RequestParam("type") String type
+			@RequestParam("type") String type,
+			@RequestParam("price") int price
 			) {
-		int count = realEstateBO.updateRealEstateTypeById(id, type);
-		// int count = realEstateBO.updateRealEstateTypeById(22,"전세"); 이경우 requestParm은 지워야..
+		int count = realEstateBO.updateRealEstateTypeById(id, type , price);
+		// int count = realEstateBO.updateRealEstateTypeById(22,"전세",70000); 이경우 requestParm은 지워야..
 		return "수정 성공: " + count;
 	}
 	

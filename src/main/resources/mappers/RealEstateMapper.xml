@@ -122,6 +122,8 @@
  			`real_estate`
  		SET
  			`type` = #{type}
+ 			,`price` = #{price}
+ 			,`updatedAt` = now()
  		WHERE
  			`id` = #{id}
  	</update>
