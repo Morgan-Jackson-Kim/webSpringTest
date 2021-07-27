@@ -116,4 +116,21 @@
  			,now()
  		)
  	</insert>
+ 	
+ 	<update id="updateRealEstateTypeById" parameterType="map">
+ 		UPDATE
+ 			`real_estate`
+ 		SET
+ 			`type` = #{type}
+ 		WHERE
+ 			`id` = #{id}
+ 	</update>
+ 	
+ 	<delete id="deleteRealEstateById" parameterType="map">
+ 		DELETE
+ 		FROM
+ 			`real_estate`
+ 		WHERE
+ 			`id` = #{id}
+ 	</delete>
 </mapper>

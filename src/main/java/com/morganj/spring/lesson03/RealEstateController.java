@@ -67,4 +67,24 @@ public class RealEstateController {
 		return "입력 성공 : " + count;
 	}
 	
+	//update
+	@RequestMapping("/test03")
+	public String test03(
+			@RequestParam("id") int id,
+			@RequestParam("type") String type
+			) {
+		int count = realEstateBO.updateRealEstateTypeById(id, type);
+		// int count = realEstateBO.updateRealEstateTypeById(22,"전세"); 이경우 requestParm은 지워야..
+		return "수정 성공: " + count;
+	}
+	
+	//delete
+	@RequestMapping("/test04")
+	public String test04(
+			@RequestParam("id") int id
+			) {
+		int count = realEstateBO.deleteRealEstateById(id);
+		return "삭제 성공 : " + count;
+	}
+	
 }
