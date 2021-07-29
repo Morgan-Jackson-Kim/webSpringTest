@@ -13,7 +13,7 @@ import com.morganj.spring.lesson04.model.Seller;
 
 @RequestMapping("/lesson04")
 @Controller
-public class NewSeller {
+public class NewSellerController {
 	
 	@Autowired
 	private SellerBO sellerBO;
