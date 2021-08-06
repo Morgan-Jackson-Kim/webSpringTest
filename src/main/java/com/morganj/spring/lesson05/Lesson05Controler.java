@@ -1,15 +1,18 @@
 package com.morganj.spring.lesson05;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.morganj.spring.lesson05.bo.WeatherHistoryBO;
 import com.morganj.spring.lesson05.model.Member;
@@ -195,7 +198,15 @@ public class Lesson05Controler {
 	}
 	
 	@GetMapping("/text05/add_weather")
-	public String addWeather() {
+	public String addWeather(
+			@RequestParam("date")Date date,
+			@RequestParam("weather")String weather,
+			@RequestParam("temperatures")double temperatures,
+			@RequestParam("precipitation")double precipitation,
+			@RequestParam("windSpeed")double windSpeed,
+			@RequestParam("microDust")String microDust
+			) {
+		
 		return "lesson05/test05/addweather";
 	}
 

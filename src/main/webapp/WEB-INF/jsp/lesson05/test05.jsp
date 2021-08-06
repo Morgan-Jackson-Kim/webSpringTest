@@ -60,6 +60,9 @@
 							<c:when test="${weather.weather eq '비' }">
 								<td> <img alt="비" src="http://marondal.com/material/images/dulumary/web/jstl/rainy.jpg"> </td>
 							</c:when>
+							<c:otherwise>
+								<td>${weather.weather }</td>
+							</c:otherwise>
 						</c:choose>
 						<td>${weather.temperatures }°C</td>
 						<td>${weather.precipitation }mm</td>
